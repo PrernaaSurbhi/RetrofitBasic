@@ -2,6 +2,7 @@ package com.example.retrofitbasic.view;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,32 +74,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
 
                     if(position!= RecyclerView.NO_POSITION){
                         Movie selectedMovie = movieArrayList.get(position);
-//                        Intent intent = new Intent(context,)
+                        Intent intent = new Intent(context,MovieActivity.class);
+                        intent.putExtra("movie",selectedMovie);
+                        context.startActivity(intent);
                     }
                 }
             });
 
-//            //adding onClickListener
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                  Integer position = getAdapterPosition();
-//
-//                    if(position!=RecyclerView.NO_POSITION) {
-//
-//                        Movie selectedMovie = movieArrayList.get(position);
-//
-//                        Intent intent = new Intent(context, MovieActivity.class);
-//                        intent.putExtra("movie",selectedMovie);
-//                        context.startActivity(intent);
-//
-//                    }
-//
-//                }
-//
-//            }
-
-//            );
         }
     }
 }
